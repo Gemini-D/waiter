@@ -1,24 +1,23 @@
 {
     "name": "gemini/waiter",
-    "type": "library",
+    "description": "A library which waiting for coroutine to end for Hyperf.",
     "license": "MIT",
     "keywords": [
         "php",
-        "hyperf"
+        "swoole",
+        "hyperf",
+        "coroutine",
+        "waiter"
     ],
-    "description": "",
-    "autoload": {
-        "psr-4": {
-            "Gemini\\Waiter\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "HyperfTest\\": "tests"
-        }
+    "homepage": "https://hyperf.io",
+    "support": {
+        "docs": "https://hyperf.wiki",
+        "issues": "https://github.com/hyperf/hyperf/issues",
+        "pull-request": "https://github.com/hyperf/hyperf/pulls",
+        "source": "https://github.com/hyperf/hyperf"
     },
     "require": {
-        "php": ">=7.2"
+        "hyperf/utils": "2.0.*"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^2.14",
@@ -29,17 +28,35 @@
         "swow/swow": "dev-develop",
         "symfony/var-dumper": "^5.1"
     },
+    "autoload": {
+        "psr-4": {
+            "Gemini\\Waiter\\": "src/"
+        },
+        "files": [
+            "src/Functions.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "tests/"
+        }
+    },
     "config": {
         "sort-packages": true
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        },
+        "hyperf": {
+            "config": "Gemini\\Waiter\\ConfigProvider"
+        }
+    },
+    "bin": [
+    ],
     "scripts": {
         "test": "phpunit -c phpunit.xml --colors=always",
         "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
         "cs-fix": "php-cs-fixer fix $1"
-    },
-    "extra": {
-        "hyperf": {
-            "config": "Gemini\\Waiter\\ConfigProvider"
-        }
     }
 }
