@@ -1,5 +1,18 @@
-# component-creater
+# Waiter for Hyperf
 
 ```
-composer create-project hyperf/component-creater
+composer require gemini/waiter
+```
+
+## How to use
+
+```php
+<?php
+
+$result = wait(function(){
+    // Do something...
+    return 'Hello World';
+});
+
+echo $result; // Hello World
 ```
